@@ -1,0 +1,20 @@
+services:
+  client:
+    build: ./frontend
+    ports:
+      - 3000:3000
+    depends_on:
+      - server
+    restart: no
+    networks:
+      - usersystem
+  server:
+    build: ./backend
+    ports:
+      - 5050:5050
+    restart: no
+    networks:
+      - usersystem
+
+networks:
+  usersystem:
