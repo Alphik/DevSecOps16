@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    app: app1
+    type: front-end
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+
+  
+
+
+
+
+
+
+
+
+# PODS SERVICES -> v1
+# replicaset deployments -> apps/v1
+
+
+
+
+# kubernetesIsAGreateTech camel case
+# joey_doesnt_share_food snake case
+# joey-dosnet-share-food kebab case
+# KubernetesIsAGreateTech camel case

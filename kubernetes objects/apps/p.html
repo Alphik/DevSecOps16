@@ -1,0 +1,40 @@
+<style>
+    .hero-video-container {
+        position: relative;
+        width: 100vw;
+        height: 60vh;
+        overflow: hidden;
+    }
+
+    .hero-video-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 2rem;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Semi-transparent background */
+        padding: 1rem 2rem;
+        border-radius: 8px;
+    }
+</style>
+
+<div class="hero-video-container">
+    <video
+        src="https://amalsiuditgroup.sharepoint.com/sites/AmalSandbox/Shared%20Documents/WhatsApp%20Video%202024-10-28%20at%2014.47.36.mp4"
+        autoplay muted loop playsinline>
+        Your browser does not support the video tag.
+    </video>
+    <!--<div class="overlay-text">-->
+    <!--    <h1>Welcome to Our Site</h1>-->
+    <!--    <p>Discover more about our services</p>-->
+    <!--</div>-->
+</div>
