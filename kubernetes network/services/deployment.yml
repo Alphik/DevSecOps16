@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      db: reading
+  template:
+    metadata:
+      labels:
+        db: reading
+    spec:
+      containers:
+      - name: reading-db
+        image: mssql
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: reading-service
+spec:
+  selector:
+    db: reading
+  ports:
+  - port: 80
+    targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: master
+spec:
+  selector:
+    matchLabels:
+      app: master
+      db: reading
+  template:
+    metadata:
+      labels:
+        app: master
+    spec:
+      containers:
+      - name: master
+        image: mssql
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: writing-db
+spec:
+  clusterIP: None
+  selector:
+    app: master
+  ports:
+  - port: 90
+    targetPort: 8080
