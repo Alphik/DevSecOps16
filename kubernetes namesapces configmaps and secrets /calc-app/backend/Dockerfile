@@ -1,5 +1,5 @@
 # Dockerfile for Flask backend
-FROM python
+FROM python:latest
 
 WORKDIR /app
 

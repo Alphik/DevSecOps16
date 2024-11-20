@@ -3,8 +3,8 @@ kind: ConfigMap
 metadata:
   name: variables
 data:
-  DATABASE_HOST: localhost
+  DATABASE_HOST: db.default.svc.cluster.local
   DATABASE_NAME: calculator_db
   DATABASE_USER: postgres
   DATABASE_PASSWORD: hodi  
-  REACT_APP_API_URL: http://backend:5000
+  REACT_APP_API_URL: http://backend-service.default.svc.cluster.local:5000
