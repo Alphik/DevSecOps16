@@ -1,0 +1,108 @@
+<style>
+    /* Apply Greycliff font to the card component */
+    .center-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        /* Full width */
+        font-size: 16px;
+        font-family: 'Greycliff', sans-serif;
+        /* Set Greycliff font */
+        font-weight: bold;
+        margin-top: 30px;
+    }
+
+    .cardd {
+        width: 30%;
+        /* Set card width to 30% */
+        padding: 30px;
+        border-radius: 16px;
+        background-color: #ffffff;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-family: 'Greycliff', sans-serif;
+        /* Set Greycliff font */
+    }
+    .cardd img {
+        width: 100%;
+    }
+
+    /* Title Styling */
+    .card-title {
+        font-size: 1.5em;
+        font-weight: 600;
+        color: #1f1f51;
+        margin: 0;
+        color: #f57e27;
+    }
+
+    /* Description Styling */
+    .card-description {
+        font-size: 1em;
+        color: #333333;
+        margin-top: 12px;
+        padding: 0 10px;
+        position: absolute;
+    }
+
+    /* Button Styling */
+    .card-button {
+        margin-top: 20px;
+        padding: 12px 24px;
+        border-radius: 24px;
+        background-color: #f57e27;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1em;
+        font-family: 'Greycliff', sans-serif;
+        /* Ensure button text uses Greycliff */
+        transition: background-color 0.3s ease;
+    }
+
+    /* GIF Styling */
+    .gif-container {
+        width: 70%;
+        /* Take the remaining 70% of the width */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .gif-container img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        /* Optional: Add rounded corners for the GIF */
+    }
+</style>
+
+<div class="center-container">
+    <!-- Card Component -->
+    <div class="cardd">
+        <!-- Logo/Image -->
+        <img src="https://amalsiuditgroup.sharepoint.com/sites/AmalSandbox/Shared%20Documents/campos%20logo.png"
+            alt="Campus Logo" class="card-logo">
+
+        <!-- Title -->
+        <h2 class="card-title">בית ספר לפסיכותרפיה</h2>
+
+        <!-- Description -->
+        <p class="card-description"> מזמינים אתכם למסע של למידה,
+            התפתחות והכשרה טיפולית ברמה הגבוהה ביותר דרך העמקה אקדמית,
+            קלינית וחווייתית באיכויות העדכניות,
+            האפקטיביות והמתוקפות מחקר הקיימות בעולם הקליני כיום. הלימודים בסבסוד משמעותי לעובדי עמל ומעבר..
+        </p>
+        <!-- Optional Button -->
+        <a href="https://michlala.amalgroup.co.il/" class="card-button">לאתר הקמפוס</a>
+    </div>
+
+    <!-- GIF Section -->
+    <div class="gif-container">
+        <img src="https://media.giphy.com/media/3oriO0OEd9QIDdllqo/giphy.gif" alt="Educational GIF">
+    </div>
+</div>
