@@ -16,7 +16,7 @@ pipeline{
             steps{
                 sh "ls"
                 dir('app'){
-                    ls"ls"
+                    sh "ls"
                     sh "python3 app.py"
                 }
             }
