@@ -14,7 +14,9 @@ pipeline{
         }
         stage("build"){
             steps{
+                sh "ls"
                 dir('app'){
+                    ls"ls"
                     sh "python3 app.py"
                 }
             }
