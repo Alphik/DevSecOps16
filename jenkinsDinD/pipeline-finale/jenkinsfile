@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('clone the code'){
             steps{
-                sh "git clone https://github.com/hothaifa96/appp1 && mv appp1/app.py app.py"
+                sh "rm -fr appp1 && git clone https://github.com/hothaifa96/appp1 && mv appp1/app.py app.py"
             }
         }
         stage("verfy python version"){
@@ -19,7 +19,7 @@ pipeline{
         }
         stage("build"){
             steps{
-                sh "python3 app.py&"             
+                sh "python3 app.py &"             
             }
         }
          stage("test"){
