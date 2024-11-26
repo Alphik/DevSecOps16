@@ -9,7 +9,7 @@ pipeline{
         }
         stage("install dependinces"){
             steps{
-                sh "pip install flask"
+                sh "pip install flask --break-system-packages"
             }
         }
         stage("build"){
