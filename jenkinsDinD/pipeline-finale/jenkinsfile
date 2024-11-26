@@ -4,7 +4,7 @@ pipeline{
         stage("verfy python version"){
             steps{
                 echo "checking python version"
-                sh "python --version"
+                sh "python3 --version"
             }
         }
         stage("install dependinces"){
@@ -15,7 +15,7 @@ pipeline{
         stage("build"){
             steps{
                 dir('app'){
-                    sh "python app.py"
+                    sh "python3 app.py"
                 }
             }
         }
