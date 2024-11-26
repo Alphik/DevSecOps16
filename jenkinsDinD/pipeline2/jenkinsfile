@@ -1,0 +1,25 @@
+pipeline{
+    agent any 
+    stages{
+        stage('clone the code'){
+            steps{
+                sh "git clone https://github.com/devopsPRO27/tictactoe"
+            }
+        }
+        stage('scan'){
+            steps{
+                sh "ls -la"
+                dir('tictactoe'){
+                    sh "pwd"
+                    sh "ls"
+                }
+                
+            }
+        }
+         stage('test me if you can'){
+            steps{
+                sh "pwd"
+            }
+        }
+    }
+}
