@@ -1,0 +1,47 @@
+pipeline{
+    agent{
+       any
+    //    label: cloud - native
+    //    docker: alpine
+    }
+    stages{
+        stage("cloning"){
+            steps{
+                echo "========cloning========"
+                sh 'git clone github,repo'
+            }
+            post{
+                always{
+                    echo "========always========"
+                }
+                success{
+                    echo "========A executed successfully========"
+                }
+                failure{
+                    echo "========A execution failed========"
+                }
+            }
+        }
+        stage("B"){
+            steps{
+                echo "========executing A========"
+            }
+            post{
+                success{
+                    echo "========A executed successfully========"
+                }
+            }
+        }
+    }
+    post{
+        always{
+            echo "========always========"
+        }
+        success{
+            echo "========pipeline executed successfully ========"
+        }
+        failure{
+            echo "========pipeline execution failed========"
+        }
+    }
+}

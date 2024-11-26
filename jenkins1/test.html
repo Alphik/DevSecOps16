@@ -1,0 +1,180 @@
+<style>
+    /* Apply Greycliff font to the card component */
+    .center-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-size: 16px;
+        font-family: 'Greycliff', sans-serif;
+        font-weight: bold;
+        margin-top: 30px;
+    }
+
+    .cardd {
+        width: 30%;
+        padding: 30px;
+        border-radius: 16px;
+        background-color: #ffffff;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-family: 'Greycliff', sans-serif;
+    }
+
+    .cardd img {
+        width: 100%;
+    }
+
+    /* Title Styling */
+    .card-title {
+        font-size: 1.5em;
+        font-weight: 600;
+        color: #1f1f51;
+        margin: 0;
+        color: #f57e27;
+    }
+
+    /* Description Styling */
+    .card-description {
+        font-size: 1em;
+        color: #333333;
+        margin-top: 12px;
+        padding: 0 10px;
+    }
+
+    /* Button Styling */
+    .card-button {
+        margin-top: 20px;
+        padding: 12px 24px;
+        border-radius: 24px;
+        background-color: #f57e27;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 1em;
+        font-family: 'Greycliff', sans-serif;
+        transition: background-color 0.3s ease;
+    }
+
+    /* GIF Styling */
+    .gif-container img {
+        /* margin-left: 30%; */
+        width: 70%;
+        height: auto;
+        border-radius: 16px;
+        cursor: pointer;
+    }
+
+    /* Modal Styling */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .modal-content {
+        position: relative;
+        width: 70%;
+        max-width: 800px;
+        background-color: #ffffff;
+        border-radius: 16px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .modal-content img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #f57e27;
+        color: #ffffff;
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 1.2em;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close-btn:hover {
+        background-color: #d45d1e;
+    }
+</style>
+
+<div class="center-container">
+    <!-- Card Component -->
+    <div class="cardd">
+        <!-- Logo/Image -->
+        <img src="https://amalsiuditgroup.sharepoint.com/sites/AmalSandbox/Shared%20Documents/campos%20logo.png"
+            alt="Campus Logo" class="card-logo">
+
+        <!-- Title -->
+        <h2 class="card-title">בית ספר לפסיכותרפיה</h2>
+
+        <!-- Description -->
+        <p class="card-description"> מזמינים אתכם למסע של למידה,
+            התפתחות והכשרה טיפולית ברמה הגבוהה ביותר דרך העמקה אקדמית,
+            קלינית וחווייתית באיכויות העדכניות,
+            האפקטיביות והמתוקפות מחקר הקיימות בעולם הקליני כיום. הלימודים בסבסוד משמעותי לעובדי עמל ומעבר..
+        </p>
+        <!-- Optional Button -->
+        <a href="https://michlala.amalgroup.co.il/" class="card-button">לאתר הקמפוס</a>
+    </div>
+
+    <!-- GIF Section -->
+    <div class="gif-container">
+        <img src="https://amalsiuditgroup.sharepoint.com/sites/AmalSandbox/Shared%20Documents/%D7%A8%D7%A7%20%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%20%D7%A2%D7%9E%D7%9C%20%D7%95%D7%9E%D7%A2%D7%91%D7%A8.gif" 
+             alt="Educational GIF" 
+             id="gifTrigger">
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="gifModal">
+    <div class="modal-content">
+        <button class="close-btn" id="closeModal">×</button>
+        <img src="https://amalsiuditgroup.sharepoint.com/sites/AmalSandbox/Shared%20Documents/%D7%A8%D7%A7%20%D7%9C%D7%A2%D7%95%D7%91%D7%93%D7%99%20%D7%A2%D7%9E%D7%9C%20%D7%95%D7%9E%D7%A2%D7%91%D7%A8.gif" 
+             alt="Educational GIF">
+    </div>
+</div>
+
+<script>
+    // Get elements
+    const gifTrigger = document.getElementById('gifTrigger');
+    const gifModal = document.getElementById('gifModal');
+    const closeModal = document.getElementById('closeModal');
+
+    // Open modal on GIF click
+    gifTrigger.addEventListener('click', () => {
+        gifModal.style.display = 'flex';
+    });
+
+    // Close modal on 'X' click
+    closeModal.addEventListener('click', () => {
+        gifModal.style.display = 'none';
+    });
+
+    // Close modal on outside click
+    window.addEventListener('click', (e) => {
+        if (e.target === gifModal) {
+            gifModal.style.display = 'none';
+        }
+    });
+</script>
