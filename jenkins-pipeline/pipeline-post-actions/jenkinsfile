@@ -19,7 +19,7 @@ pipeline{
             }
             stage("verfiy python"){
                 steps{
-                    sh 'python --version'
+                    sh 'python3 --version'
                 }
             }
             }
