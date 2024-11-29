@@ -3,9 +3,9 @@ pipeline{
     stages{
         stage("A"){
             steps{
-            withAWS(credentials:'jenkins'){
-                sh 'aws sts get-caller-identity'
-            }
+                withAWS(credentials:'jenkins',region:'eu-west-1'){
+                    sh 'aws sts get-caller-identity' 
+                }
             }
         }
        
