@@ -5,10 +5,21 @@ pipeline{
             steps{
                 echo "========executing A========"
             }
+            post{
+                success{
+                    echo 'success'
+                }
+            }
         }
         stage("B"){
             steps{
                 echo "========executing B========"
+                sh 'figlet -c sean'
+            }
+            post{
+                failure{
+                    sh 'apt update && apt install figlet'
+                }
             }
         }
     }
