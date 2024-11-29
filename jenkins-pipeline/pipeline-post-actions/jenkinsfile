@@ -22,6 +22,15 @@ pipeline{
                 }
             }
         }
+
+    }
+    post{
+        success{
+            echo "post action success"
+        }
+        failure{
+            echo "ohh noooooooooooo!"
+        }
     }
    
 }
