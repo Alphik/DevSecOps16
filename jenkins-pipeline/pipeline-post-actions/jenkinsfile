@@ -1,14 +1,71 @@
 pipeline{
     agent any
+    environment{
+        REPO='https://github.com/devopsPRO27'
+        APP='tictactoe'
+    }
     stages{
-        stage("A"){
-            steps{
-                withAWS(credentials:'jenkins',region:'eu-west-1'){
-                    sh 'aws sts get-caller-identity' 
+        parallel{
+            stage("verfiy aws"){
+                steps{
+                    sh 'aws --version'
+                }
+            }
+            stage("verfiy docker"){
+                steps{
+                    sh 'docker --version'
+                }
+            }
+            stage("verfiy docker"){
+                steps{
+                    sh 'python --version'
                 }
             }
         }
+        stage('test aws connectivity'){
+            steps{
+                withAWS(credentials:'jenkins'){
+                    sh 'aws sts get-caller-identity'
+                }
+            }
+        }
+        stage('clone the application'){
+            steps{
+                sh 'git clone $REPO/$APP'
+            }
+        }
+        stage('build'){
+            steps{
+                python3 $APP/ttt.py
+            }
+
+        }
+        parallel{
+            stage('unit test'){
+                steps{
+                    sh 'sleep 3'
+                    sh 'echo pass'
+                }
+            }
+            stage('e2e test'){
+                steps{
+                    sh 'sleep 4'
+                    sh 'echo pass'
+                }
+            }
+
+        }
+        
        
     }
    
 }
+
+
+
+
+
+
+ withAWS(credentials:'jenkins',region:'eu-west-1'){
+                    sh 'aws sts get-caller-identity' 
+                }
