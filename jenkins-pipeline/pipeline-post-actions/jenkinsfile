@@ -64,7 +64,16 @@ pipeline{
 
             }
         }
-       
+        stage('build docker image'){
+            steps{
+                sh 'docker build -t $JOB_NAME:V$BUILD_NUMBER $APP'
+            }
+       }
+       stage('verify image creation'){
+            steps{
+                sh 'docker images'
+            }
+       }
     }
     post{
         always{
