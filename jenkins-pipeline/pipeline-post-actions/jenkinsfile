@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment{
-        REPO='https://github.com/devopsPRO27'
+        REPO='https://github.com/hothaifa96'
         APP='appp1'
     }
     stages{
