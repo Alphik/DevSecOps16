@@ -38,7 +38,7 @@ pipeline{
         }
         stage('build'){
             steps{
-                python3 $APP/ttt.py
+                python3 tictactoe/ttt.py
             }
 
         }
