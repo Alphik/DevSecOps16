@@ -38,7 +38,7 @@ pipeline{
         }
         stage('install requirements'){
             steps {
-               sh 'pip3 install flask'
+               sh 'pip3 install flask --break-system-packages'
             }
         }
         stage('build'){
