@@ -1,0 +1,36 @@
+pipeline{
+    agent any
+    stages{
+        stage("A"){
+            steps{
+                echo "========executing A========"
+            }
+            post{
+                success{
+                    echo 'success'
+                }
+            }
+        }
+        stage("B"){
+            steps{
+                echo "========executing B========"
+                sh 'figlet -c sean'
+            }
+            post{
+                failure{
+                    sh 'apt update && apt install figlet'
+                }
+            }
+        }
+
+    }
+    post{
+        success{
+            echo "post action success"
+        }
+        failure{
+            echo "ohh noooooooooooo!"
+        }
+    }
+   
+}
