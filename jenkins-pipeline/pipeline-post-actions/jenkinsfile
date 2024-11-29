@@ -1,22 +1,15 @@
 pipeline{
     agent any
-    environment{
-        REPO_NAME = "appp1"
-        REPOURL = 'https://github.com'
-        GITUSER = 'hothaifa96'
-    }
     stages{
         stage("A"){
             steps{
-                echo " exeute the job number $BUILD_NUMBER"
-                sh "git clone $REPOURL/$GITUSER/$REPO_NAME"
+            withAWS(credentials:'jenkins'){
+                echo '$AccessKeyId' 
+                echo '$SecretAccessKey'
+            }
             }
         }
-        stage("B"){
-            steps{
-                echo "this job name is : $JOB_NAME"
-            }
-        }
+       
     }
    
 }
