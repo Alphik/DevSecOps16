@@ -4,8 +4,7 @@ pipeline{
         stage("A"){
             steps{
             withAWS(credentials:'jenkins'){
-                echo '$AccessKeyId' 
-                echo '$SecretAccessKey'
+                sh 'aws sts get-caller-identity'
             }
             }
         }
