@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment{
         REPO='https://github.com/devopsPRO27'
-        APP='tictactoe'
+        APP='appp1'
     }
     stages{
         stage('verfication'){
@@ -38,7 +38,7 @@ pipeline{
         }
         stage('build'){
             steps{
-                sh 'python3 $APP/ttt.py'
+                sh 'python3 $APP/app.py &'
             }
 
         }
@@ -63,7 +63,7 @@ pipeline{
     }
     post{
         always{
-            sh 'rm -fr tictactoe'
+            sh 'rm -fr $APP'
         }
     }
    
