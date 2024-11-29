@@ -55,7 +55,7 @@ pipeline{
             }
 
         }
-        
+
        
     }
    
@@ -65,7 +65,3 @@ pipeline{
 
 
 
-
- withAWS(credentials:'jenkins',region:'eu-west-1'){
-                    sh 'aws sts get-caller-identity' 
-                }
