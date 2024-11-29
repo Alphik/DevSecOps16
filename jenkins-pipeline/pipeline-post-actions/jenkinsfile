@@ -5,7 +5,8 @@ pipeline{
         APP='tictactoe'
     }
     stages{
-        parallel{
+        stage('verfication'){
+            parallel{
             stage("verfiy aws"){
                 steps{
                     sh 'aws --version'
@@ -20,6 +21,7 @@ pipeline{
                 steps{
                     sh 'python --version'
                 }
+            }
             }
         }
         stage('test aws connectivity'){
@@ -40,22 +42,23 @@ pipeline{
             }
 
         }
-        parallel{
-            stage('unit test'){
-                steps{
-                    sh 'sleep 3'
-                    sh 'echo pass'
+        stage('test'){
+            parallel{
+                stage('unit test'){
+                    steps{
+                        sh 'sleep 3'
+                        sh 'echo pass'
+                    }
                 }
-            }
-            stage('e2e test'){
-                steps{
-                    sh 'sleep 4'
-                    sh 'echo pass'
+                stage('e2e test'){
+                    steps{
+                        sh 'sleep 4'
+                        sh 'echo pass'
+                    }
                 }
-            }
 
+            }
         }
-
        
     }
    
