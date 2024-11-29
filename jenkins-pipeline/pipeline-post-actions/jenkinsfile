@@ -36,8 +36,10 @@ pipeline{
                 sh 'git clone $REPO/$APP'
             }
         }
-        stage('isntall requirements'){
-            steps 'pip3 install flask'
+        stage('install requirements'){
+            steps {
+               sh 'pip3 install flask'
+            }
         }
         stage('build'){
             steps{
