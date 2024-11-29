@@ -17,7 +17,7 @@ pipeline{
                     sh 'docker --version'
                 }
             }
-            stage("verfiy docker"){
+            stage("verfiy python"){
                 steps{
                     sh 'python --version'
                 }
