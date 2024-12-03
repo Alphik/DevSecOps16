@@ -59,3 +59,6 @@
 - Test the application and deploy it to AWS (e.g., upload artifacts to S3 or update an AWS Lambda function).
 
 ---
+
+# pipeline 1:
+https://github.com/devopsPRO27/devops-personal-project
