@@ -2,6 +2,8 @@ import random
 import time
 from flask import Flask
 from prometheus_client import start_http_server,Gauge,Summary,Counter,Histogram,generate_latest
+from prometheus_client import CONTENT_TYPE_LATEST
+
 
 app = Flask(__name__) 
 
@@ -16,7 +18,8 @@ def metrics():
     HTTP_REQUESTS.labels(endpoint='/metrics',method='get',code=200).inc(1)
     duration=time.time() - start_time
     HTTP_REQUEST_LATENCY.labels(endpoint='/metrics',method='get').observe(duration)
-    return generate_latest()
+    return generate_latest(),200,{'Content-Type': CONTENT_TYPE_LATEST}
+
 @app.get('/login')
 def login():
     if random.randint(0,100) > 50:
@@ -26,4 +29,4 @@ def login():
         HTTP_REQUESTS.labels(endpoint='/login',method='get',code='400').inc(1)
         return '400'
 
-app.run(port=5001)
+app.run(port=5001,host='0.0.0.0')
