@@ -1,4 +1,4 @@
-# Prometheus 
+# Prometheus
 
 ## Introduction
 
@@ -7,7 +7,9 @@ Prometheus is an open-source monitoring and alerting system that excels at colle
 ## Installation
 
 ### Install Prometheus Server
+
 Docker:
+
 ```Bash
 docker run -d -p 9090:9090 --name prometheus prometheus/prometheus
 ```
@@ -17,6 +19,7 @@ Manual: Refer to the official documentation for detailed instructions.
 ### Install Grafana
 
 Docker:
+
 ```Bash
 docker run -d -p 3000:3000 --name grafana grafana/grafana
 ```
@@ -26,6 +29,7 @@ Manual: Follow the official installation guide.
 ## Configuring Prometheus
 
 Create a Prometheus Configuration File (prometheus.yml):
+
 ```YAML
 global:
   scrape_interval: 15s # How often to scrape targets
@@ -33,11 +37,11 @@ global:
 scrape_configs:
   - job_name: 'example-app'
     static_configs:
-      - targets: ['localhost:8000'] 
+      - targets: ['localhost:8000']
 
   - job_name: 'node-exporter'
     static_configs:
-      - targets: ['localhost:9100'] 
+      - targets: ['localhost:9100']
 ```
 
 ### Start the Prometheus Server:
@@ -54,6 +58,7 @@ docker run -d \
 ```
 
 Manual: Start the Prometheus server using the configuration file.
+
 ```bash
 ./prometheus --config.file=prometheus.yml
 ```
@@ -95,7 +100,7 @@ Start the HTTP Server:
 from prometheus_client import start_http_server
 
 start_http_server(8000)
-``` 
+```
 
 ## Querying Prometheus with PromQL
 
@@ -107,6 +112,7 @@ PromQL (Prometheus Query Language) is a powerful query language for time-series 
 - Use code with caution.
 
 Range Vector:
+
 ```promql
 http_requests_total[5m]
 ```
@@ -117,9 +123,9 @@ rate(http_requests_total[5m])
 Increase:
 increase(http_requests_total[5m])
 
+## another example
 
-## another example 
-```python 
+```python
 from flask import Flask
 from prometheus_client import Counter, Histogram, generate_latest
 from prometheus_client import start_http_server
