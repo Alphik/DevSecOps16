@@ -9,7 +9,7 @@ Each subject will have its own dedicated branch where you will find all the rela
 ### Subjects and Branches
 https://github.com/Alphik/DevSecOps16/tree/docker
 - [Docker](https://github.com/Alphik/DevSecOps16/tree/docker)
-- [Kubernetes](https://github.com/Alphik/DevSecOps16/tree/kubernetes)
+- [Kubernetes](https://github.com/Alphik/DevSecOps16/tree/Kubernetes)
 - [Prometheus](https://github.com/Alphik/DevSecOps16/tree/prometheus)
 - [Grafana](https://github.com/Alphik/DevSecOps16/tree/grafana)
 - [Jenkins](https://github.com/Alphik/DevSecOps16/tree/jenkins)
