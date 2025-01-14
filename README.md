@@ -8,12 +8,12 @@ Each subject will have its own dedicated branch where you will find all the rela
 
 ### Subjects and Branches
 
-- [Docker](https://github.com/hothaifa96/DevSecOps16/tree/docker)
-- [Kubernetes](https://github.com/hothaifa96/DevSecOps16/tree/kubernetes)
-- [Prometheus](https://github.com/hothaifa96/DevSecOps16/tree/prometheus)
-- [Grafana](https://github.com/hothaifa96/DevSecOps16/tree/grafana)
-- [Jenkins](https://github.com/hothaifa96/DevSecOps16/tree/jenkins)
-- [Terraform](https://github.com/hothaifa96/DevSecOps16/tree/terraform)
+- [Docker](https://github.com/Alphik/DevSecOps16/tree/docker)
+- [Kubernetes](https://github.com/Alphik/DevSecOps16/tree/kubernetes)
+- [Prometheus](https://github.com/Alphik/DevSecOps16/tree/prometheus)
+- [Grafana](https://github.com/Alphik/DevSecOps16/tree/grafana)
+- [Jenkins](https://github.com/Alphik/DevSecOps16/tree/jenkins)
+- [Terraform](https://github.com/Alphik/DevSecOps16/tree/terraform)
 
 ## Course Content
 
